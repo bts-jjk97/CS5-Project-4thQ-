@@ -1,0 +1,41 @@
+import sys
+from Tkinter import *
+
+ABOUT_TEXT = """About Molecular Genetic Data Translation
+The genes in DNA encode protein molecules, which are the "workhouses" of the cell.
+"""
+
+TRANSLATE_TEXT = """Translation Page
+In this page, you can input any genetic data (DNA or RNA) to be translated into your specified genetic data for the output.
+"""
+
+def clickAbout():
+    toplevel = Toplevel()
+    label1 = Label(toplevel, text=ABOUT_TEXT, height=0, width=100)
+    label1.pack()
+
+def clickTrans():
+    toplevel = Toplevel()
+    label1 = Label(toplevel, text=TRANSLATE_TEXT, height=0, width=100)
+    label1.pack()
+    
+#master = Tk()
+
+app = Tk()
+app.title("Automatic Translation of Molecular Genetic Data")
+app.geometry("500x300+200+200")
+
+label = Label(app, text="Molecular Genenetic Data Translation", height=0, width=50)
+label1 = Label(app, text="All organisms, from the simplest bacteria to ourselves, use the \n same basic mechanism of reading and expressing genes, so \n fundamental to life as we know it that it is often referred to \n as the 'Central Dogma'. Information passes from the genes (DNA) \n to an RNA copy of the gene, and the RNA copy directs the \n sequential assembly of a chain of amino acids.", height=0, width=50)
+label2 = Label(app, text="The project will enable users to input genetic data in the form \n of DNA or RNA, and outut their specified translation. The users \n will also have the option to translate RNA to protein, so long \n as their inputted data is in the form of RNA genetic data. There \n will also be a page where users can read up on the translation \n process of the Central Dogma and other related information.", height=0, width=50)
+b1 = Button(app, text="Quit", width=20, command=app.destroy)
+b2 = Button(app, text="About Molecular Data Tranlsation", width=30, command=clickAbout)
+b3 = Button(app, text="Translate", width=20, command=clickTrans)
+label.pack()
+label1.pack()
+label2.pack()
+b1.pack(side='bottom', padx=0, pady=0)
+b2.pack(side='bottom', padx=3, pady=3)
+b3.pack(side='bottom', padx=0, pady=0)
+
+app.mainloop()
